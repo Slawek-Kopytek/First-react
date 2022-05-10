@@ -13,7 +13,7 @@ class Column extends React.Component {
     column: PropTypes.string,
     cards: PropTypes.array,
     title: PropTypes.node.isRequired,
-    icon: PropTypes.string,
+    icon: PropTypes.node,
   };
 
   render() {

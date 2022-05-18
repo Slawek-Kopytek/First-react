@@ -1,18 +1,15 @@
 import React from 'react';
-import styles from './Column.scss';
+import styles from './SearchResults.scss';
 import Card from '../Card/Card';
-import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
 import { settings } from '../../data/dataStore';
 import PropTypes from 'prop-types';
 
-class Column extends React.Component {
+class SearchResults extends React.Component {
   static propTypes = {
-    column: PropTypes.string,
     cards: PropTypes.array,
-    title: PropTypes.node.isRequired,
+    title: PropTypes.node,
     icon: PropTypes.node,
-    addCard: PropTypes.func,
   };
 
   static defaultProps = {
@@ -20,24 +17,24 @@ class Column extends React.Component {
   };
 
   render() {
-    const {title, icon, cards, addCard} = this.props;
+    const {title, icon, cards} = this.props;
 
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>{title}
-          <span className={styles.icon}><Icon name={icon} /></span>
+        <h3 className={styles.title}>
+          <span className={styles.icon}>
+            <Icon name={icon} />
+          </span>
+          {title}
         </h3>
         <div className={styles.cards}>
           {cards.map(cardData => (
             <Card key={cardData.id} {...cardData} />
           ))}
         </div>
-        <div className={styles.creator}>
-          <Creator text={settings.cardCreatorText} action={addCard} />
-        </div>
       </section>
     );
   }
 }
 
-export default Column;
+export default SearchResults;

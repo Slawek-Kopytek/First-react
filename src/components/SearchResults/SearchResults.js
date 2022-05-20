@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
 
 class SearchResults extends React.Component {
   static propTypes = {
+    title: PropTypes.string,
+    icon: PropTypes.string,
     cards: PropTypes.array,
-    title: PropTypes.node,
-    icon: PropTypes.node,
   };
 
   static defaultProps = {
@@ -21,11 +21,10 @@ class SearchResults extends React.Component {
 
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>
+        <h3 className={styles.title}>{title}
           <span className={styles.icon}>
             <Icon name={icon} />
           </span>
-          {title}
         </h3>
         <div className={styles.cards}>
           {cards.map(cardData => (

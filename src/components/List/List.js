@@ -12,9 +12,9 @@ class List extends React.Component {
 
   static propTypes = {
     title: PropTypes.node.isRequired,
+    image: PropTypes.string,
     description: PropTypes.node,
     columns: PropTypes.array,
-    image: PropTypes.string,
     addColumn: PropTypes.func,
   };
 

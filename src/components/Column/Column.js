@@ -6,12 +6,12 @@ import Icon from '../Icon/Icon';
 import { settings } from '../../data/dataStore';
 import PropTypes from 'prop-types';
 
+
 class Column extends React.Component {
   static propTypes = {
-    column: PropTypes.string,
+    title: PropTypes.string,
     cards: PropTypes.array,
-    title: PropTypes.node.isRequired,
-    icon: PropTypes.node,
+    icon: PropTypes.string,
     addCard: PropTypes.func,
   };
 
@@ -27,7 +27,7 @@ class Column extends React.Component {
         <h3 className={styles.title}>{title}
           <span className={styles.icon}><Icon name={icon} /></span>
         </h3>
-        <div className={styles.cards}>
+        <div>
           {cards.map(cardData => (
             <Card key={cardData.id} {...cardData} />
           ))}

@@ -21,7 +21,8 @@ class SearchResults extends React.Component {
 
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>{title}
+        <h3 className={styles.title}>
+          {title}
           <span className={styles.icon}>
             <Icon name={icon} />
           </span>

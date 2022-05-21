@@ -14,7 +14,7 @@ const initialState = {
 // define reducers
 const reducers = {
   columns: columnsReducer,
-  card: cardsReducer,
+  cards: cardsReducer,
 };
 
 // add blank reducers for initial state properties without reducers
